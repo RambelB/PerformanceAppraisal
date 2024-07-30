@@ -1,0 +1,9 @@
+﻿<div class="sign-out">
+    Welcome, @ViewBag.UserName
+    @if (ViewBag.JobTitle != null)
+    {
+        <span class="jobtitle">- @ViewBag.JobTitle</span>
+    }
+    <a class="blue-button" asp-controller="Account" asp-action="ChangePassword">Change Password</a>
+    <a class="blue-button" asp-controller="Account" asp-action="Logout">Sign Out</a>
+</div>

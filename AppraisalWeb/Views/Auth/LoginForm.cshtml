@@ -1,0 +1,27 @@
+﻿@model AppraisalWeb.ViewModel.AuthLoginVM
+@{
+    Layout = "_LayoutLogin";
+}
+<main>
+    <form asp-action="Login" class="login-form" method="post">
+        <input asp-for="@Model.NIK" name="NIK" placeholder="NIK" autocomplete="off" />
+        <input type="password" asp-for="@Model.Password" name="password" placeholder="password" />
+        <label asp-for="@Model.Role">Role</label>
+        <select asp-for="@Model.Role">
+            @foreach (var role in @Model.Roles)
+            {
+                <option value="@role.Value">@role.Text</option>
+            }
+        </select>
+        <span class="warning" asp-validation-for="@Model.NIK"></span>
+        <span class="warning" asp-validation-for="@Model.Password"></span>
+        @if (ViewBag.Message != null)
+        {
+            <span class="warning">@ViewBag.Message</span>
+        }
+        <button class="grey-button" type="submit" value="LoginForm">sign in</button>
+    </form>
+  @*   <div class="link-container">
+        <a asp-action="Register" asp-route-role="Guest">Register as Guest</a>
+    </div> *@
+</main>

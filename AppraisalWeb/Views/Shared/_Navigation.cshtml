@@ -1,0 +1,52 @@
+﻿<nav>
+    <div class="menu-container">
+        @if (@ViewBag.Role == "Penilai")
+        {
+            @* <a class="menu account blue-button" asp-controller="Home" asp-action="HomeIndex">
+                <i class="fas fa-chart-pie"></i>
+                <span>Account</span>
+            </a>
+            <a class="menu admin blue-button" asp-controller="Admin" asp-action="AdminIndex">
+                <i class="fas fa-th"></i>
+                <span>Admin</span>
+            </a> *@
+            <a class="menu penilaian blue-button" asp-controller="Penilaian" asp-action="PenilaianIndex">
+                <i class="fas fa-th"></i>
+                <span>Penilaian</span>
+            </a>
+            <a class="menu home blue-button" asp-controller="Home" asp-action="Index">
+                <i class="fas fa-th"></i>
+                <span>Home</span>
+            </a>
+            @*
+            <a class="menu inventory blue-button" asp-controller="Inventory" asp-action="InventoryIndex">
+                <i class="fab fa-amazon"></i>
+                <span>Inventory</span>
+            </a>
+            <a class="menu room-service blue-button" asp-controller="RoomService" asp-action="RoomServiceIndex">
+                <i class="fas fa-box-open"></i>
+                <span>Room Service</span>
+            </a>
+            <a class="menu reservation-log blue-button" asp-controller="ReservationLog" asp-action="ReservationLogIndex">
+                <i class="fas fa-users"></i>
+                <span>Reservation Log</span>
+            </a> *@
+        }
+        else
+        {
+            @* <a class="menu booking blue-button" asp-controller="Booking" asp-action="BookingRoomIndex">
+                <i class="fas fa-box-open"></i>
+                <span>Booking</span>
+            </a>
+            <a class="menu my-room blue-button" asp-controller="MyRoom" asp-action="MyRoomIndex">
+                <i class="fas fa-users"></i>
+                <span>My Room</span>
+            </a> *@
+            <a class="menu home blue-button" asp-controller="Home" asp-action="Index">
+                <i class="fas fa-th"></i>
+                <span>Home</span>
+            </a>
+        }
+
+    </div>
+</nav>

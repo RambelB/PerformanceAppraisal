@@ -1,0 +1,51 @@
+﻿@model AppraisalWeb.ViewModel.PenilaianIndexVM
+@{
+    Layout  = "_Layout";
+}
+<main>
+    <div class="grid-container penilaian-index">
+        @if (Model.employees.Count > 0)
+        {
+            <table>
+                <thead>
+                    <th>Name</th>
+                    <th>Division</th>
+                    <th>Action</th>
+                </thead>
+                <tbody>
+                    @foreach (var employee in Model.employees)
+                    {
+                        <tr>
+                            <td>@employee.Name</td>
+                            <td>@employee.Division</td>
+                            <td>@if(employee.IsEvaluated == false)
+                                {
+                                    <a class="blue-button employee-evaluate" asp-action="FormPenilaian" asp-route-nik="@employee.Nik">Evaluasi</a>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+                @if (@Model.pagination.TotalPages != 0)
+                {
+                    <tfoot>
+                        <tr>
+                            <td colspan="4">
+                                <div class="pagination">
+                                    <div>page @Model.pagination.Page of @Model.pagination.TotalPages</div>
+                                    <div>
+                                        @for (int pageNumber = 1; pageNumber <= Model.pagination.TotalPages; pageNumber++)
+                                        {
+                                            <a asp-action="PenilaianIndex" asp-route-page="@pageNumber">@pageNumber</a>
+                                        }
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tfoot>
+                }
+            </table>
+        }
+    </div>
+</main>
+
