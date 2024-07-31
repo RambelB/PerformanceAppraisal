@@ -3,9 +3,11 @@ using System.Diagnostics;
 using AppraisalWeb.Services;
 using AppraisalWeb.ViewModel;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AppraisalWeb.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly HomeService _service;
@@ -14,7 +16,7 @@ namespace AppraisalWeb.Controllers
         {
             _service = service;
         }
-
+        [HttpGet("HomeIndex")]
         public IActionResult Index()
         {
             var nik = HttpContext.User.FindFirst("nik");

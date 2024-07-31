@@ -33,6 +33,7 @@ public class PenilaianService
         {
             Name = x.Nama,
             Division = x.DivisiOrDepartemen,
+            Nik = x.Nik.ToString(),
             IsEvaluated = _userRepository.isEvaluated(x.Nik)
         }).ToList();
         return new PenilaianIndexVM()

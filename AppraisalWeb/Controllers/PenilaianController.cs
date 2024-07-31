@@ -31,7 +31,7 @@ public class PenilaianController:Controller
         ViewBag.Role = jabatan.Value;
         FormPenilaianVM formPenilaianVM = _penilaianService.GenerateFormPenilaian(nik);
 
-        return View("FormPenilaian", formPenilaianVM);
+        return View( formPenilaianVM);
     }
 
     [HttpPost("FormPenilaian")]

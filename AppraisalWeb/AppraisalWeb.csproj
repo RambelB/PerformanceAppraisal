@@ -7,19 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Views\Penilaian\FormPenilaian.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AppraisalBussiness\AppraisalBussiness.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Views\Penilaian\FormPenilaian.cshtml" />
   </ItemGroup>
 
 </Project>
