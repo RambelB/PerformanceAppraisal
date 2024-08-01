@@ -9,11 +9,11 @@ public partial class PerubahanNilai
 
     public int LostTimeInjury { get; set; }
 
-    public int? Project { get; set; }
+    public int Project { get; set; }
 
-    public int? Sga { get; set; }
+    public int Sga { get; set; }
 
-    public int? AuditorOrTrainer { get; set; }
+    public int AuditorOrTrainer { get; set; }
 
     public string? RekapId { get; set; }
 
@@ -25,9 +25,9 @@ public partial class PerubahanNilai
 
     public int? UpdatedBy { get; set; }
 
-    public int? SuratPeringatan { get; set; }
+    public int SuratPeringatan { get; set; }
 
-    public int? FireIncident { get; set; }
+    public int FireIncident { get; set; }
 
     public virtual Rekapitulasi? Rekap { get; set; }
 }
